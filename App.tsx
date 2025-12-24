@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Chatbot } from './components/Chatbot';
 import { QuizInterface } from './components/QuizInterface';
+import { PreviewArea } from './components/PreviewArea';
 import { WEBSITE_CONFIG, ALL_SUBJECTS } from './constants';
 import { Jenjang, QuizQuestion } from './types';
 import { generateMaterial, generateQuiz } from './services/geminiService';
@@ -213,12 +214,7 @@ const App: React.FC = () => {
               </div>
             ) : (
               <div className="animate-in fade-in slide-in-from-bottom-10 duration-700">
-                <div className="bg-white p-8 sm:p-16 rounded-[48px] shadow-2xl shadow-slate-200/50 border border-slate-50 prose prose-slate max-w-none">
-                  <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-8 border-b border-slate-100 pb-8">{currentSubject}</h1>
-                  <div className="whitespace-pre-wrap text-slate-700 text-lg leading-[1.8] font-medium">
-                    {material}
-                  </div>
-                </div>
+                <PreviewArea title={currentSubject} content={material || ''} />
                 <div className="mt-12 flex justify-center">
                    <button 
                       onClick={() => handleStartQuiz(currentSubject)}
