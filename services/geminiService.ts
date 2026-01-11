@@ -82,6 +82,6 @@ export const getChatbotResponse = async (history: { role: string, parts: { text:
     return response.text;
   } catch (error) {
     console.error("Error in chatbot:", error);
-    return "Duh, sistem tutor lagi overload nih ð Coba tanya lagi ya sebentar lagi!";
+    return "Duh, sistem tutor lagi overload nih 😅 Coba tanya lagi ya sebentar lagi!";
   }
 };
